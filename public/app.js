@@ -116,7 +116,8 @@ minus.addEventListener("click", () => {
 });
 
 function handleSubmit() {
-  const newPrice = "$" + 125 * count.innerHTML;
+  const newPrice =
+    "$" + 125 * (Number(cart_num.innerHTML) + Number(count.innerHTML));
   if (count.innerHTML > 0) {
     cart_content.innerHTML = `
     <div class="flex gap-4 items-center">
@@ -128,7 +129,9 @@ function handleSubmit() {
       <div class="text-Dark-grayish-blue">
         <p>Fall Limited Edition Snickers</p>
         <p>
-          $125.00 X <span>${count.innerHTML}</span>
+          $125.00 X <span>${
+            Number(cart_num.innerHTML) + Number(count.innerHTML)
+          }</span>
           <span class="font-bold text-black">${newPrice}</span>
         </p>
       </div>
@@ -146,15 +149,16 @@ function handleSubmit() {
       checkout
     </button>
    `;
-    cart_num.innerHTML = count.innerHTML;
+
+    cart_num.innerHTML = Number(cart_num.innerHTML) + Number(count.innerHTML);
     cart_num.classList.remove("hidden");
     cart_num.classList.add("flex");
   }
 }
-cart_content.innerHTML = `<div class="py-10 font-bold text-Dark-grayish-blue">Your cart is empty 😢</div>`;
+cart_content.innerHTML = `<div class=" flex items-center justify-center h-28 font-bold text-Dark-grayish-blue">Your cart is empty 😢</div>`;
 
 function deleteItem() {
-  cart_content.innerHTML = `<div class="py-10 font-bold text-Dark-grayish-blue">Your cart is empty 😢</div>`;
+  cart_content.innerHTML = `<div class="flex items-center justify-center h-28 font-bold text-Dark-grayish-blue">Your cart is empty 😢</div>`;
   cart_num.innerHTML = "0";
   count.innerHTML = "0";
   cart_num.classList.remove("flex");
