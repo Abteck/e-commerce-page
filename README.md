@@ -32,7 +32,7 @@ Users should be able to:
 
 ### Links
 
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: [demo here](https://e-commerce-page-teck.vercel.app/)
 
 ## My process
 
