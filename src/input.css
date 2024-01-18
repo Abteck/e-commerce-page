@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* carousal */
+.active {
+  border: 2px solid hsl(26, 100%, 55%);
+  opacity: 0.6;
+}
+
+.slide,
+.l-slide {
+  display: none;
+}
+
+#carousal img,
+#lightbox img {
+  width: 100%;
+  height: 100%;
+}
+
+.dot:hover,
+.l-dot:hover {
+  opacity: 0.6;
+}
+
+#lightbox {
+  background-color: rgba(0, 0, 0, 0.75);
+  z-index: 40;
+}
+
+.close-m:hover .close {
+  fill: hsl(26, 100%, 55%);
+}
+
+.nextbtn:hover .next {
+  stroke: hsl(26, 100%, 55%);
+}
+
+/* carousal end */
+
+li:after {
+  transition: 0.5s;
+}
+
+/* mobile menu section */
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+  backdrop-filter: opacity(0.7);
+  z-index: 30;
+}
+
+#mobile-menu {
+  transition: 0.4s;
+}
+
+#mobile-menu.hide {
+  left: -500px;
+}
+.active-menu {
+  left: 0;
+}
+
+/* mobile menu end */
+
+/* cart section */
+#cart-basket {
+  transition: 0.4s;
+}
+
+#cart-basket.lock {
+  top: -1000px;
+}
+
+.unlock {
+  top: 4rem;
+}
+
+/* cart end */
